@@ -1,0 +1,12 @@
+.tabs{
+
+    display: flex;
+    justify-content: right;
+    margin-bottom: 20px;
+    margin-top:0px;
+    width: 100%;
+    background-color: rgb(111, 212, 255);
+    height:10%;
+    font-size:xx-large;
+    
+}

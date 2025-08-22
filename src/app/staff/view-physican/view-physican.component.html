@@ -1,0 +1,26 @@
+
+ @for (train of trainedIn; track train.trainedInId) {   
+    
+<mat-card class="card" appearance="outlined">
+  <mat-card-header>
+    <!-- <div mat-card-avatar class="image"></div> -->
+    <mat-card-title>{{train.physcianName}}</mat-card-title>
+
+    <!-- <mat-card-subtitle>{{train.physician.position}}</mat-card-subtitle> -->
+  </mat-card-header>
+  <img mat-card-image src="https://material.angular.dev/assets/img/examples/shiba2.jpg" alt="Profile Photo">
+  <mat-card-content>
+    <p>
+      <b>Treatment:</b>{{train.treatment.name}}<br>
+       <b>Certification Date:</b>{{train.certificationDate}}<br>
+        <b>Certification Expiry:</b>{{train.certificationExpires}}<br>
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button matButton>Edit</button>
+    <button matButton>Delete</button>
+  </mat-card-actions>
+</mat-card>
+
+ }
+
