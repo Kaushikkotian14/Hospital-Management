@@ -1,13 +1,12 @@
-
 .footer-container {
     background: #1976d2;
     color: #fff;
-    height:10%;
+    height: 10%;
     left: 0;
-    margin-bottom: 0;
+    bottom: 0;
+    position: fixed;
     width: 100%;
-    text-align:center;
-    
+    text-align: center;
 }
 .footer-container a {
     color: #fff;

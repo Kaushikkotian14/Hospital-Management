@@ -1,28 +1,28 @@
 <mat-grid-list cols="4" rowHeight="1:1" gutterSize="16px">
   @for (train of trainedIn; track train.trainedInId) {
     <mat-grid-tile>
-      <mat-card class="card" appearance="outlined">
+      <mat-card class="custom-card" appearance="outlined">
         <mat-card-header>
           <mat-card-title>{{ train.physcianName }}</mat-card-title>
         </mat-card-header>
 
-        <img 
-          mat-card-image 
-          src="https://material.angular.dev/assets/img/examples/shiba2.jpg" 
+        <img
+          mat-card-image
+          src="profilepic.png"
           alt="Profile Photo"
-        >
+        />
 
         <mat-card-content>
           <p>
-            <b>Treatment:</b> {{ train.treatment.name }} <br>
-            <b>Certification Date:</b> {{ train.certificationDate }} <br>
-            <b>Certification Expiry:</b> {{ train.certificationExpires }} <br>
+            <b>Certification Date:</b> {{ train.certificationDate }} <br />
+            <b>Certification Expiry:</b> {{ train.certificationExpires }} <br />
+            <b>Treatment:</b> {{ train.treatment.name }} <br />
           </p>
         </mat-card-content>
 
-        <mat-card-actions>
-          <button mat-raised-button color="primary">Edit</button>
-          <button mat-raised-button color="warn">Delete</button>
+        <mat-card-actions align="end">
+              <button mat-button color="accent">Edit</button>
+      <button mat-button color="warn" >Delete</button>
         </mat-card-actions>
       </mat-card>
     </mat-grid-tile>
