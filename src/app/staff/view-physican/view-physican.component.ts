@@ -2,11 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import {  MatCardModule } from '@angular/material/card';
 import { PhysicanService } from '../../services/physican.service';
 import { physican,trainedin,treatment } from '../../models/physican.model';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 
 @Component({
   selector: 'app-view-physican',
-  imports: [MatCardModule],
+  imports: [MatCardModule,MatGridListModule],
   templateUrl: './view-physican.component.html',
   styleUrl: './view-physican.component.css'
 })

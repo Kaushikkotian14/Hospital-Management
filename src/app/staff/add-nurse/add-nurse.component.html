@@ -1,1 +1,32 @@
-<p>add-nurse works!</p>
+<h1 mat-dialog-title>{{ data ? 'Edit Nurse' : 'Add New Nurse' }}</h1>
+
+<div mat-dialog-content>
+  <form [formGroup]="nurseForm">
+    <mat-form-field >
+      <mat-label>Name</mat-label>
+      <input matInput formControlName="name" />
+      <mat-error>
+        @if (nurseForm.get('name')?.invalid) {
+          Name is required
+        }
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field  >
+      <mat-label>Position</mat-label>
+      <input matInput formControlName="position" />
+      <mat-error>
+        @if (nurseForm.get('position')?.invalid) {
+          Position is required
+        }
+      </mat-error>
+    </mat-form-field>
+
+    <mat-checkbox formControlName="registered">Registered</mat-checkbox>
+  </form>
+</div>
+
+<div mat-dialog-actions>
+  <button mat-button (click)="close()">Cancel</button>
+  <button mat-raised-button color="primary" (click)="save()">Save</button>
+</div>

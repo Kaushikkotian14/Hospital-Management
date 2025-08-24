@@ -1,0 +1,19 @@
+
+.footer-container {
+    background: #1976d2;
+    color: #fff;
+    height:10%;
+    left: 0;
+    margin-bottom: 0;
+    width: 100%;
+    text-align:center;
+    
+}
+.footer-container a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 16px;
+}
+.footer-container a:hover {
+    text-decoration: underline;
+}

@@ -8,8 +8,8 @@ export interface trainedin{
     trainedInId: number,
     physicianId:number,
   physcianName:string,
-  certificationDate: Date,
-  certificationExpires: Date,
+  certificationDate: string,
+  certificationExpires: string,
   treatment:treatment,
    physician:physican
 
@@ -19,5 +19,5 @@ export interface treatment {
       procedureId: number,
       name: string,
       cost: number,
-      createdOn: Date
+      createdOn: string
     }
