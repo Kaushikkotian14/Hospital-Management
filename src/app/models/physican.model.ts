@@ -1,7 +1,8 @@
 export interface physican{
     physicianId: number,
     name: string,
-    position: string
+    position: string,
+     createdOn:string
 }
 
 export interface trainedin{
@@ -21,3 +22,11 @@ export interface treatment {
       cost: number,
       createdOn: string
     }
+
+export interface Medicine{
+medicationId:number,
+name	:string,
+brand:	string,
+description:	string,
+createdDate:string
+}

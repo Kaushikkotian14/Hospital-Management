@@ -15,17 +15,15 @@ export class Nurse {
     return this.http.get<nurse[]>(`${this.apiUrl}/nurse`);
   }
 
-  addNurse(n: nurse): Observable<nurse> {
-    return this.http.post<nurse>(`${this.apiUrl}/nurse`, n);
+  addNurse(nurse: nurse): Observable<nurse> {
+    return this.http.post<nurse>(`${this.apiUrl}/nurse`, nurse);
   }
 
-   updateNurse(n: nurse): Observable<nurse> {
-    return this.http.put<nurse>(`${this.apiUrl}/nurse`, n);
+   updateNurse(nurse: nurse): Observable<nurse> {
+    return this.http.put<nurse>(`${this.apiUrl}/nurse`, nurse);
   }
 
-  deleteNurse(n: nurse): Observable<void> {
-  return this.http.request<void>('delete', `${this.apiUrl}/nurse`, {
-    body: n
-  });
+  deleteNurse(nurse: nurse): Observable<void> {
+  return this.http.request<void>('delete', `${this.apiUrl}/nurse`, {body: nurse});
 }
 }

@@ -4,10 +4,15 @@
   flex-direction: column;
   justify-content: space-between;
   border-radius: 12px;
+  background-color: rgb(220, 249, 190);
   
 }
 
-
+.add-button{
+    margin-bottom: 20px;
+    margin-left: 10px;
+    font-size: larger;
+}
 
 
 mat-card-actions {

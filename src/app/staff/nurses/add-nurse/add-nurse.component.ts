@@ -1,7 +1,7 @@
 import { Component, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA, MatDialogModule } from '@angular/material/dialog';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { nurse } from '../../models/nurse.model';
+import { nurse } from '../../../models/nurse.model';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatCheckboxModule } from '@angular/material/checkbox';
@@ -9,14 +9,7 @@ import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-add-nurse',
-  imports: [
-    ReactiveFormsModule,
-    MatDialogModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatCheckboxModule,
-    MatButtonModule
-  ],
+  imports: [ReactiveFormsModule,MatDialogModule, MatFormFieldModule,MatInputModule,MatCheckboxModule,MatButtonModule],
   templateUrl: './add-nurse.component.html',
   styleUrl: './add-nurse.component.css'
 })

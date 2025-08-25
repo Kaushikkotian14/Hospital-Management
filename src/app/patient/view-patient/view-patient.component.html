@@ -1,1 +1,30 @@
-<p>view-patient works!</p>
+<button class="add-button" matFab extended color="primary" (click)="openDialog()"><mat-icon >add</mat-icon>New Patient</button>
+
+<mat-grid-list cols="4" rowHeight="1:1" gutterSize="16px">
+  @for (patient of patients; track patient.patientId) {
+    <mat-grid-tile>
+      <mat-card class="custom-card">
+        <mat-card-header>
+          <mat-card-title><b>{{ patient.name }}</b></mat-card-title>
+        </mat-card-header>
+
+        <img mat-card-image src="patient.png" alt="Profile Photo"/>
+
+        <mat-card-content>
+          <p>
+            <b>Physician ID:</b> {{ patient.patientId }} <br>
+            <b>Address:</b> {{ patient.address }} <br />
+            <b>Phone :</b>  {{ patient.phone }} <br />
+            <b>Created On:</b> {{ patient.createdOn }} <br />
+
+          </p>
+        </mat-card-content>
+
+        <mat-card-actions align="end">
+      <button mat-button color="accent"  (click)="openDialog(patient)"><mat-icon >edit</mat-icon></button>
+      <button mat-button color="warn"  (click)="deletePatient(patient.patientId)"><mat-icon >delete</mat-icon></button>
+        </mat-card-actions>
+      </mat-card>
+    </mat-grid-tile>
+  }
+</mat-grid-list>

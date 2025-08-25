@@ -2,14 +2,14 @@ import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { MatTableModule } from '@angular/material/table';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
-import { Nurse } from '../../services/nurse.service';
-import { nurse } from '../../models/nurse.model';
+import { MatIcon } from '@angular/material/icon';
+import { Nurse } from '../../../services/nurse.service';
+import { nurse } from '../../../models/nurse.model';
 import { AddNurse } from '../add-nurse/add-nurse.component';
 
 @Component({
   selector: 'app-view-nurse',
-  standalone: true,
-  imports: [MatTableModule, MatButtonModule, MatDialogModule, AddNurse],
+  imports: [MatTableModule, MatButtonModule, MatDialogModule, MatIcon],
   templateUrl: './view-nurse.component.html',
   styleUrl: './view-nurse.component.css'
 })
@@ -36,9 +36,10 @@ export class ViewNurse implements OnInit {
   }
 
   openDialog(nurseData?: nurse) {
+    console.log(nurseData)
   const dialogRef = this.dialog.open(AddNurse, {
     width: '400px',
-    data: nurseData || null
+    data: nurseData
   });
 
   dialogRef.afterClosed().subscribe(result => {
@@ -57,20 +58,17 @@ export class ViewNurse implements OnInit {
 }
 
 deleteNurse(id: number): void {
-  const nurse = this.dataSource.find(n => n.nurseId === id);
+  const nurse = this.dataSource.find(nurse => nurse.nurseId === id);
   if (!nurse) return;
 
   this.nurseService.deleteNurse(nurse).subscribe({
     next: () => {
-      this.getNurse() ;
-     
+      this.getNurse() ; 
     },
     error: (err) => {
       console.error('Error ', err);
     }
   });
 }
-
-
 
 }

@@ -6,31 +6,39 @@ export const routes: Routes = [
         path: 'home',
         loadComponent: () => import('./home/home.component').then(m => m.Home),
       },
-       {
-        path: 'add-patient',
-        loadComponent: () => import('./patient/add-patient/add-patient.component').then(m => m.AddPatient),
-      },
+      
      {
         path: 'view-patient',
         loadComponent: () => import('./patient/view-patient/view-patient.component').then(m => m.ViewPatient),
       },
-           {
-        path: 'add-physican',
-        loadComponent: () => import('./staff/add-physican/add-physican.component').then(m => m.AddPhysican),
-      },
+           
      {
         path: 'view-physican',
-        loadComponent: () => import('./staff/view-physican/view-physican.component').then(m => m.ViewPhysican),
+        loadComponent: () => import('./staff/physician/view-physican/view-physican.component').then(m => m.ViewPhysican),
       },
-                 {
-        path: 'add-nurse',
-        loadComponent: () => import('./staff/add-nurse/add-nurse.component').then(m => m.AddNurse),
-      },
-
+                 
            {
         path: 'view-nurse',
-        loadComponent: () => import('./staff/view-nurse/view-nurse.component').then(m => m.ViewNurse),
+        loadComponent: () => import('./staff/nurses/view-nurse/view-nurse.component').then(m => m.ViewNurse),
       },
+
+
+       {
+        path: 'procedures',
+        loadComponent: () => import('./staff/procedures/view-procedure.component/view-procedure.component').then(m => m.ViewProcedureComponent),
+      },
+ 
+      {
+        path: 'medicines',
+        loadComponent: () => import('./staff/medicines/view-medicine.component/view-medicine.component').then(m => m.ViewMedicineComponent),
+      },
+
+       {
+        path: 'rooms',
+        loadComponent: () => import('./staff/rooms/rooms.component/rooms.component').then(m => m.RoomsComponent),
+      }
+
+
 
 
 

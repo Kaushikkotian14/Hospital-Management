@@ -1,1 +1,40 @@
-<p>add-patient works!</p>
+<h1 mat-dialog-title>{{ data ? 'Edit Patient' : 'Add New Patient' }}</h1>
+
+<div mat-dialog-content>
+  <form [formGroup]="patientForm">
+    <mat-form-field >
+      <mat-label>Name</mat-label>
+      <input matInput formControlName="name" />
+      <mat-error>
+        @if (patientForm.get('name')?.invalid) {
+          Name is required
+        }
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field  >
+      <mat-label>Address</mat-label>
+      <input matInput formControlName="address" />
+      <mat-error>
+        @if (patientForm.get('address')?.invalid) {
+          Address is required
+        }
+      </mat-error>
+    </mat-form-field>
+
+        <mat-form-field  >
+      <mat-label>Phone</mat-label>
+      <input matInput formControlName="phone" />
+      <mat-error>
+        @if (patientForm.get('phone')?.invalid) {
+          Phone is required
+        }
+      </mat-error>
+    </mat-form-field>
+  </form>
+</div>
+
+<div mat-dialog-actions>
+  <button mat-button (click)="close()">Cancel</button>
+  <button mat-raised-button color="primary" (click)="save()">Save</button>
+</div>
