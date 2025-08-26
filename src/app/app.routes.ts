@@ -4,42 +4,37 @@ export const routes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
        {
         path: 'home',
-        loadComponent: () => import('./home/home.component').then(m => m.Home),
+        loadComponent: () => import('./components/home/home.component').then(m => m.Home),
       },
       
      {
         path: 'view-patient',
-        loadComponent: () => import('./patient/view-patient/view-patient.component').then(m => m.ViewPatient),
+        loadComponent: () => import('./components/patient/view-patient/view-patient.component').then(m => m.ViewPatient),
       },
            
      {
         path: 'view-physican',
-        loadComponent: () => import('./staff/physician/view-physican/view-physican.component').then(m => m.ViewPhysican),
+        loadComponent: () => import('./components/staff/physician/view-physican/view-physican.component').then(m => m.ViewPhysican),
       },
                  
            {
         path: 'view-nurse',
-        loadComponent: () => import('./staff/nurses/view-nurse/view-nurse.component').then(m => m.ViewNurse),
+        loadComponent: () => import('./components/staff/nurses/view-nurse/view-nurse.component').then(m => m.ViewNurse),
       },
 
 
        {
         path: 'procedures',
-        loadComponent: () => import('./staff/procedures/view-procedure.component/view-procedure.component').then(m => m.ViewProcedureComponent),
+        loadComponent: () => import('./components/staff/procedures/view-procedure.component/view-procedure.component').then(m => m.ViewProcedureComponent),
       },
  
       {
         path: 'medicines',
-        loadComponent: () => import('./staff/medicines/view-medicine.component/view-medicine.component').then(m => m.ViewMedicineComponent),
+        loadComponent: () => import('./components/staff/medicines/view-medicine.component/view-medicine.component').then(m => m.ViewMedicineComponent),
       },
 
        {
         path: 'rooms',
-        loadComponent: () => import('./staff/rooms/rooms.component/rooms.component').then(m => m.RoomsComponent),
+        loadComponent: () => import('./components/staff/rooms/rooms.component/rooms.component').then(m => m.RoomsComponent),
       }
-
-
-
-
-
 ];

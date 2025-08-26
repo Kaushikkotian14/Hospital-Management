@@ -1,19 +1,17 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { AddNurse } from './staff/nurses/add-nurse/add-nurse.component';
-import { ViewNurse } from './staff/nurses/view-nurse/view-nurse.component';
-import { AddPatient } from './patient/add-patient/add-patient.component';
-import { ViewPatient } from './patient/view-patient/view-patient.component';
-import { AddPhysican } from './staff/physician/add-physican/add-physican.component';
-import { ViewPhysican } from './staff/physician/view-physican/view-physican.component';
-import { Home } from './home/home.component';
-import { Header } from './header/header.component';
-import { Footer } from './footer/footer.component';
+
+import { ViewNurse } from './components/staff/nurses/view-nurse/view-nurse.component';
+import { ViewPatient } from './components/patient/view-patient/view-patient.component';
+import { ViewPhysican } from './components/staff/physician/view-physican/view-physican.component';
+import { Home } from './components/home/home.component';
+import { Header } from './shared/header/header.component';
+import { Footer } from './shared/footer/footer.component';
 
 @Component({
   selector: 'app-root',
 
-  imports: [RouterOutlet,Header,Footer,Home,AddNurse,ViewNurse,AddPatient,ViewPatient,AddPhysican,ViewPhysican],
+  imports: [RouterOutlet,Header,Footer,Home,ViewNurse,ViewPatient,ViewPhysican],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

@@ -1,0 +1,43 @@
+<h1 mat-dialog-title>{{ data ? 'Edit Room' : 'Add New Room Data' }}</h1>
+
+<div mat-dialog-content>
+  <form [formGroup]="roomForm">
+    <mat-form-field >
+      <mat-label>Room Number</mat-label>
+      <input matInput formControlName="roomNumber" />
+      <mat-error>
+        @if (roomForm.get('roomNumber')?.invalid) {
+          Room Number is required
+        }
+      </mat-error>
+    </mat-form-field>
+
+     <mat-form-field >
+      <mat-label>Block ID</mat-label>
+      <input matInput formControlName="blockId" />
+      <mat-error>
+        @if (roomForm.get('blockId')?.invalid) {
+         Block Id is required
+        }
+      </mat-error>
+    </mat-form-field>
+
+
+    <mat-form-field  >
+      <mat-label>Room Type</mat-label>
+      <input matInput formControlName="roomType" />
+      <mat-error>
+        @if (roomForm.get('roomType')?.invalid) {
+          Room Type is required
+        }
+      </mat-error>
+    </mat-form-field>
+
+    <mat-checkbox formControlName="availability">Availability</mat-checkbox>
+  </form>
+</div>
+
+<div mat-dialog-actions>
+  <button mat-button (click)="close()">Cancel</button>
+  <button mat-raised-button color="primary" (click)="save()">Save</button>
+</div>
