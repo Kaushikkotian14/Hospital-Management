@@ -3,14 +3,14 @@ import { MatTableModule } from '@angular/material/table';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { MatIcon } from '@angular/material/icon';
-import { AddProcedureComponent } from '../add-procedure.component/add-procedure.component';
+import { AddProcedureDialog } from '../add-procedure/add-procedure-dialog.component';
 import { treatment } from '../../../../core/models/procedure.model';
 import { ProcedureService } from '../../../../core/services/procedure.service';
 import { DatePipe,CurrencyPipe } from '@angular/common';
 
 
 @Component({
-  selector: 'app-view-procedure.component',
+  selector: 'app-view-procedure',
   imports: [MatTableModule, MatButtonModule, MatDialogModule, MatIcon,DatePipe,CurrencyPipe],
   templateUrl: './view-procedure.component.html',
   styleUrl: './view-procedure.component.css'
@@ -39,7 +39,7 @@ public   getProcedure() {
 
 public   openDialog(treatmentData?:treatment){
    console.log("dialog",treatmentData);
-       const dialogRef = this.dialog.open(AddProcedureComponent, {
+       const dialogRef = this.dialog.open(AddProcedureDialog, {
          width: '400px',
          data: treatmentData
        });

@@ -7,7 +7,7 @@ import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { MatIcon } from '@angular/material/icon';
 import { NurseService } from '../../../../core/services/nurse.service';
 import { nurse } from '../../../../core/models/nurse.model';
-import { AddNurse } from '../add-nurse/add-nurse.component';
+import { AddNurseDialog } from '../add-nurse-dialog/add-nurse-dialog.component';
 import { DatePipe } from '@angular/common';
 
 @Component({
@@ -39,7 +39,7 @@ public  getNurse() {
 
 public  openDialog(nurseData?: nurse) {
     console.log(nurseData)
-  const dialogRef = this.dialog.open(AddNurse, {
+  const dialogRef = this.dialog.open(AddNurseDialog, {
     width: '400px',
     data: nurseData
   });

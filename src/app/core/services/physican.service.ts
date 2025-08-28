@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient} from '@angular/common/http';
 import { physican } from '../models/physican.model';
-import { trainedin } from '../models/trainedIn.model';
 import { Observable } from 'rxjs';
-import { environment } from '../../environment/env';
+import { environment } from '../../../environment/env';
 
 
 @Injectable({
@@ -30,15 +29,15 @@ return this.http.get<physican[]>(`${this.apiUrl}/physician`);
     return this.http.request<void>('delete', `${this.apiUrl}/physician`, {body: physician});
   }
 
-   public getTrainedIn(): Observable<trainedin[]> {
-return this.http.get<trainedin[]>(`${this.apiUrl}/trainedin`);   
-  }
+   public getPhysicianById(id:number):Observable<physican[]> {
+      return this.http.get<physican[]>(`${this.apiUrl}/physician/${id}`);
+    }
+   }
+  
 
-  public getTrainedInById(): Observable<trainedin[]> {
-return this.http.get<trainedin[]>(`${this.apiUrl}/trainedin/physician/{physicianId}`);   
-  }
+
 
 
     
 
-}
+

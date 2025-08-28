@@ -20,6 +20,7 @@
         </mat-card-content>
 
         <mat-card-actions align="end">
+       <button class="view-button" (click)="physicianDetails(physician.physicianId)" matFab extended color="primary" >View Details</button>   
       <button mat-button color="accent"  (click)="openDialog(physician)"><mat-icon >edit</mat-icon></button>
       <button mat-button color="warn"  (click)="deletePhysican(physician.physicianId)"><mat-icon>delete</mat-icon></button>
         </mat-card-actions>

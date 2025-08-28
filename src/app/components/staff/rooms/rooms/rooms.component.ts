@@ -3,8 +3,8 @@ import { MatTableModule } from '@angular/material/table';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { MatIcon } from '@angular/material/icon';
-import { AddRoomsComponent } from '../add-rooms.component/add-rooms.component';
-import { AddBlockComponent } from '../add-block.component/add-block.component';
+import { AddRoomsDialog } from '../add-rooms/add-rooms-dialog.component';
+import { AddBlockDialog } from '../add-block/add-block-dialog.component';
 import { Room } from '../../../../core/models/room.model';
 import { Block } from '../../../../core/models/block.model';
 import { RoomService } from '../../../../core/services/room.service';
@@ -47,7 +47,7 @@ public displayedColumnsRoom: string[] = ['roomId', 'roomNumber','blockId','roomT
 
   public openDialogRoom(roomData?:Room){
  console.log("dialog",roomData);
-         const dialogRef = this.dialog.open(AddRoomsComponent, {
+         const dialogRef = this.dialog.open(AddRoomsDialog, {
            width: '400px',
            data: roomData
          });

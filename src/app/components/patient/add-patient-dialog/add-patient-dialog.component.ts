@@ -8,17 +8,17 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatButtonModule } from '@angular/material/button';
 
 @Component({
-  selector: 'app-add-patient',
-  imports: [ReactiveFormsModule,MatDialogModule, MatFormFieldModule,MatInputModule,MatCheckboxModule,MatButtonModule],
-  templateUrl: './add-patient.component.html',
-  styleUrl: './add-patient.component.css'
+  selector: 'app-add-patient-dialog',
+  imports: [ReactiveFormsModule, MatDialogModule, MatFormFieldModule, MatInputModule, MatCheckboxModule, MatButtonModule],
+  templateUrl: './add-patient-dialog.component.html',
+  styleUrl: './add-patient-dialog.component.css'
 })
-export class AddPatient {
- public patientForm: FormGroup;
+export class AddPatientDialog {
+  public patientForm: FormGroup;
 
   constructor(
     private fb: FormBuilder,
-    private dialogRef: MatDialogRef<AddPatient>,
+    private dialogRef: MatDialogRef<AddPatientDialog>,
     @Inject(MAT_DIALOG_DATA) public data: patient
   ) {
     this.patientForm = this.fb.group({
@@ -29,14 +29,15 @@ export class AddPatient {
   }
 
   public save() {
-  if (this.patientForm.valid) {
-    this.dialogRef.close({
-      ...this.data,...this.patientForm.value });
+    if (this.patientForm.valid) {
+      this.dialogRef.close({
+        ...this.data, ...this.patientForm.value
+      });
+    }
+
   }
 
-}
-
-public close() {
+  public close() {
     this.dialogRef.close();
   }
 }

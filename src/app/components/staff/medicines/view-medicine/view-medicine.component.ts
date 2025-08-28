@@ -3,7 +3,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { MatIcon } from '@angular/material/icon';
-import { AddMedicineComponent } from '../add-medicine.component/add-medicine.component';
+import { AddMedicineDialog } from '../add-medicine-dialog/add-medicine-dialog.component';
 import { Medicine } from '../../../../core/models/medicine.model';
 import { MedicineService } from '../../../../core/services/medicine.service';
 import { DatePipe } from '@angular/common';
@@ -38,7 +38,7 @@ public displayedColumns: string[] = ['medicationId', 'name','brand', 'descriptio
 
   public openDialog(medicineData?:Medicine){
   console.log("dialog",medicineData);
-         const dialogRef = this.dialog.open(AddMedicineComponent, {
+         const dialogRef = this.dialog.open(AddMedicineDialog, {
            width: '400px',
            data: medicineData
          });

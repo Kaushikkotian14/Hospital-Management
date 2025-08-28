@@ -3,31 +3,32 @@ import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
-import { AddPhysican } from '../add-physican/add-physican.component';
+import { AddPhysicanDialog } from '../add-physican-dialog/add-physican-dialog.component';
 import { PhysicanService } from '../../../../core/services/physican.service';
 import { physican } from '../../../../core/models/physican.model';
-import { trainedin } from '../../../../core/models/trainedIn.model';
 import { treatment } from '../../../../core/models/procedure.model';
 import { MatIcon } from '@angular/material/icon';
 import { DatePipe } from '@angular/common';
+import { Router } from '@angular/router';
+
 
 
 @Component({
   selector: 'app-view-physican',
   standalone: true,
-  imports: [MatCardModule, MatGridListModule, MatButtonModule, MatDialogModule,MatIcon,DatePipe],
+  imports: [MatCardModule, MatGridListModule, MatButtonModule, MatDialogModule,MatIcon,DatePipe,],
   templateUrl: './view-physican.component.html',
   styleUrl: './view-physican.component.css'
 })
 export class ViewPhysican implements OnInit {
 public  physicans: physican[] = [];
-public  trainedIn: trainedin[] = [];
 public  treatment: treatment[] = [];
 
   constructor(
     private PhysicanService: PhysicanService,
      private cdRef: ChangeDetectorRef,
-    private dialog: MatDialog
+    private dialog: MatDialog,
+    private route:Router
   ) {}
 
   ngOnInit(): void {
@@ -56,20 +57,13 @@ public  deletePhysican(id: number): void {
   });
 }
 
-public  getTrainedIn() {
-    this.PhysicanService.getTrainedIn().subscribe(data => {
-      this.trainedIn = data;
-      this.getPhysican();
-      console.log("trainedin", this.trainedIn);
-    });
-  }
 
 
 
   
 public  openDialog(physicianData?: physican) {
     console.log("dialog",physicianData);
-    const dialogRef = this.dialog.open(AddPhysican, {
+    const dialogRef = this.dialog.open(AddPhysicanDialog, {
       width: '400px',
       data: physicianData
     });
@@ -87,6 +81,11 @@ public  openDialog(physicianData?: physican) {
         }
       }
     });
+  }
+
+  public physicianDetails(id:number){
+    let physicianId = id.toString()
+    this.route.navigate(['/view-physican/',physicianId]);
   }
   
 }

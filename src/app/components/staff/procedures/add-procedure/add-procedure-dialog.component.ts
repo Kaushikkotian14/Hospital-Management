@@ -9,17 +9,17 @@ import { MatButtonModule } from '@angular/material/button';
 
 
 @Component({
-  selector: 'app-add-procedure.component',
+  selector: 'app-add-procedure',
   imports: [ReactiveFormsModule,MatDialogModule, MatFormFieldModule,MatInputModule,MatButtonModule],
-  templateUrl: './add-procedure.component.html',
-  styleUrl: './add-procedure.component.css'
+  templateUrl: './add-procedure-dialog.component.html',
+  styleUrl: './add-procedure-dialog.component.css'
 })
-export class AddProcedureComponent {
+export class AddProcedureDialog {
 public procedureForm: FormGroup;
 
   constructor(
     private fb: FormBuilder,
-    private dialogRef: MatDialogRef<AddProcedureComponent>,
+    private dialogRef: MatDialogRef<AddProcedureDialog>,
     @Inject(MAT_DIALOG_DATA) public data: treatment
   ) {
     this.procedureForm = this.fb.group({

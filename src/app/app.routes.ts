@@ -16,6 +16,11 @@ export const routes: Routes = [
         path: 'view-physican',
         loadComponent: () => import('./components/staff/physician/view-physican/view-physican.component').then(m => m.ViewPhysican),
       },
+
+      {
+        path: 'view-physican/:id',
+        loadComponent: () => import('./components/staff/physician/physican-details/physican-details.component').then(m => m.PhysicanDetails),
+      },
                  
            {
         path: 'view-nurse',
@@ -25,16 +30,16 @@ export const routes: Routes = [
 
        {
         path: 'procedures',
-        loadComponent: () => import('./components/staff/procedures/view-procedure.component/view-procedure.component').then(m => m.ViewProcedureComponent),
+        loadComponent: () => import('./components/staff/procedures/view-procedure/view-procedure.component').then(m => m.ViewProcedureComponent),
       },
  
       {
         path: 'medicines',
-        loadComponent: () => import('./components/staff/medicines/view-medicine.component/view-medicine.component').then(m => m.ViewMedicineComponent),
+        loadComponent: () => import('./components/staff/medicines/view-medicine/view-medicine.component').then(m => m.ViewMedicineComponent),
       },
 
        {
         path: 'rooms',
-        loadComponent: () => import('./components/staff/rooms/rooms.component/rooms.component').then(m => m.RoomsComponent),
+        loadComponent: () => import('./components/staff/rooms/rooms/rooms.component').then(m => m.RoomsComponent),
       }
 ];

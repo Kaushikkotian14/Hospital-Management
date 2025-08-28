@@ -8,17 +8,17 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 
 @Component({
-  selector: 'app-add-rooms.component',
+  selector: 'app-add-rooms-dialog',
   imports: [ReactiveFormsModule,MatDialogModule, MatFormFieldModule,MatInputModule,MatButtonModule,MatCheckboxModule],
-  templateUrl: './add-rooms.component.html',
-  styleUrl: './add-rooms.component.css'
+  templateUrl: './add-rooms-dialog.component.html',
+  styleUrl: './add-rooms-dialog.component.css'
 })
-export class AddRoomsComponent {
+export class AddRoomsDialog {
 public roomForm: FormGroup;
 
   constructor(
     private fb: FormBuilder,
-    private dialogRef: MatDialogRef<AddRoomsComponent>,
+    private dialogRef: MatDialogRef<AddRoomsDialog>,
     @Inject(MAT_DIALOG_DATA) public data: Room
   ) {
     this.roomForm = this.fb.group({

@@ -8,17 +8,17 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatButtonModule } from '@angular/material/button';
 
 @Component({
-  selector: 'app-add-nurse',
+  selector: 'app-add-nurse-dialog',
   imports: [ReactiveFormsModule,MatDialogModule, MatFormFieldModule,MatInputModule,MatCheckboxModule,MatButtonModule],
-  templateUrl: './add-nurse.component.html',
-  styleUrl: './add-nurse.component.css'
+  templateUrl: './add-nurse-dialog.component.html',
+  styleUrl: './add-nurse-dialog.component.css'
 })
-export class AddNurse {
+export class AddNurseDialog {
   public nurseForm: FormGroup;
   
   constructor(
     private fb: FormBuilder,
-    private dialogRef: MatDialogRef<AddNurse>,
+    private dialogRef: MatDialogRef<AddNurseDialog>,
     @Inject(MAT_DIALOG_DATA) public data: nurse
   ) {
     this.nurseForm = this.fb.group({

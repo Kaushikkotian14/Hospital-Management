@@ -1,13 +1,12 @@
 import { treatment } from "./procedure.model"
 import { physican } from "./physican.model"
 
-export interface trainedin{
-    trainedInId: number,
-    physicianId:number,
-  physcianName:string,
+export interface trainedInModel {
+  trainedInId: number,
+  physicianId: number,
+  physcianName: string,
   certificationDate: string,
   certificationExpires: string,
-  treatment:treatment,
-   physician:physican
-
+  treatment: treatment,
+  physician: physican
 }
